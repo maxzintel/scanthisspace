@@ -4,19 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"hello world\""
+    "build": "postcss css/tailwind.css -o public/build/tailwind.css"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/s1dequest/scanthisspace.git"
   },
-  "author": "Max Zintel",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/s1dequest/scanthisspace/issues"
   },
   "homepage": "https://github.com/s1dequest/scanthisspace#readme",
   "dependencies": {
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8.1.0",
+    "postcss-cli": "^8.0.0",
     "tailwindcss": "^1.8.10"
   }
 }
