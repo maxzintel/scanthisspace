@@ -1,0 +1,22 @@
+{
+  "name": "scanthisspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"hello world\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s1dequest/scanthisspace.git"
+  },
+  "author": "Max Zintel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s1dequest/scanthisspace/issues"
+  },
+  "homepage": "https://github.com/s1dequest/scanthisspace#readme",
+  "dependencies": {
+    "tailwindcss": "^1.8.10"
+  }
+}
