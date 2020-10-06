@@ -1,4 +1,6 @@
 pipeline {
+  agent any
+
   environment {
     SLACK_HOOK = credentials('slack_hook')
     DOCKER_HUB = credentials('docker_creds')
