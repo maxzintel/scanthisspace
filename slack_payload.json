@@ -1,7 +1,7 @@
 {
   "username": "Jenkins",
   "icon_emoji": ":man_in_business_suit_levitating:",
-  "channel": "yyy",
+  "channel": "B01C92FB276",
   "text": "*Jenkins DevOps Pipeline Failed!*",
   "attachments": [
     {
@@ -16,21 +16,6 @@
         },
         {
           "type": "divider"
-        },
-        {
-          "type": "context",
-          "elements": [
-            {
-              "type": "image",
-              "image_url": "xxx",
-              "alt_text": ":bot:"
-            },
-            {
-              "type": "plain_text",
-              "emoji": true,
-              "text": "Jenkins Alerts"
-            }
-          ]
         }
       ]
     }
