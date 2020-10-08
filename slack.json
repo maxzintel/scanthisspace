@@ -1,1 +1,0 @@
-{"username":"Jenkins","icon_emoji":":man_in_business_suit_levitating:","channel":"B01C92FB276","text":"*<example.com|Jenkins DevOps Pipeline Failed!>*","attachments":[{"color":"#fce903","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"*JOB:* JOB_NAME, *BUILD:* BUILD_NUM\n"}},{"type":"divider"}]}]}
