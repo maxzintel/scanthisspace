@@ -49,6 +49,7 @@ pipeline {
   }
   post {
     failure {
+      sh "chmod +x ./send_slack.sh"
       sh "./send_slack.sh ${env.JOB_NAME} ${env.BUILD_NUMBER} ${env.BUILD_URL}"
     }
   }
