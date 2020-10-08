@@ -13,14 +13,6 @@ pipeline {
                       returnStdout: true,
                       script: 'git log -1 --format=%h'
     )}"""
-    JQ_BODY = """${sh(
-                      returnStdout: true,
-                      script: 'jq -cr ".attachments[0].blocks[0].text.text = \"*JOB:* ${env.JOB_NAME}, *BUILD:* ${env.BUILD_NUMBER}\n\""'
-    )}"""
-    JQ_TITLE = """${sh(
-                      returnStdout: true,
-                      script: 'jq -cr ".text = \"*<${env.BUILD_URL}|Jenkins DevOps Pipeline Failed!>*\""'
-    )}"""
   }
   stages {
     stage('Docker: build'){
@@ -59,7 +51,7 @@ pipeline {
     failure {
       sh """#!/bin/bash 
       set -x
-      cat slack_payload.json | ${JQ_BODY} | ${JQ_TITLE} | jq -c . > slack.json
+      cat slack_payload.json | jq -cr \\".attachments[0].blocks[0].text.text = \\\\\\"*JOB:* ${env.JOB_NAME}, *BUILD:* ${env.BUILD_NUMBER}\n\\\\\\"\\" | jq -cr \\".text = \\\\\\"*<${env.BUILD_URL}|Jenkins DevOps Pipeline Failed!>*\\\\\\"\\" | jq -c . > slack.json
       curl -X POST -H 'Content-type: application/json' --data '@slack.json' ${SLACK_HOOK}
       """
     }
