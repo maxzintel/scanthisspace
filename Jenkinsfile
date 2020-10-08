@@ -2,7 +2,6 @@ pipeline {
   agent any
 
   environment {
-    JOB_NAME = ${env.JOB_NAME}
     SLACK_HOOK = credentials('slack_hook')
     DOCKER_HUB = credentials('docker_creds')
     PROJECT_NAME = 'scanthisspace'
@@ -53,6 +52,9 @@ pipeline {
       sh """#!/bin/bash 
       set -x
       echo ${env.JOB_NAME}
+      echo ${env.BUILD_NUMBER}
+      echo ${env.BUILD_URL}
+      echo ${SLACK_HOOK}
       cat slack_payload.json | jq -cr ".attachments[0].blocks[0].text.text = \"*JOB:* ${env.JOB_NAME}, *BUILD:* ${env.BUILD_NUMBER}\n\"" | jq -cr ".text = \"*<${env.BUILD_URL}|Jenkins DevOps Pipeline Failed!>*\"" | jq -c . > slack.json
       curl -X POST -H 'Content-type: application/json' --data '@slack.json' ${SLACK_HOOK}
       """
