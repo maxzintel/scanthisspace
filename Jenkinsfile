@@ -49,13 +49,7 @@ pipeline {
   }
   post {
     failure {
-      sh"""#!/bin/bash 
-      set -x
-      JOB=\\"JOB: ${env.JOB_NAME}, BUILD: ${env.BUILD_NUMBER}\\"
-      URL=\\"<${env.BUILD_URL}|Jenkins DevOps Pipeline Failed!>\\"
-      cat slack_payload.json | jq -cr \\".attachments[0].blocks[0].text.text = ${JOB}\\" | jq -cr \\".text = ${URL}\\" | jq -c . > slack.json
-      curl -X POST -H 'Content-type: application/json' --data '@slack.json' ${SLACK_HOOK}
-      """
+      sh "./send_slack.sh ${env.JOB_NAME} ${env.BUILD_NUMBER} ${env.BUILD_URL}"
     }
   }
 }
