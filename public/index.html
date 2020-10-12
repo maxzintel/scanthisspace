@@ -7,16 +7,22 @@
     <link rel="stylesheet" href="/build/tailwind.css">
   </head>
   <body class="bg-gray-400">
-    <div class="bg-gray-100 flex">
-      <div class="px-8 py-12 max-w-md mx-auto sm:max-w-xl lg:max-w-full lg:w-1/2 lg:py-24 lg:px-12"> <!-- Place logo in a div container and add padding around it. -->
-        <div class="xl:max-w-lg xl:ml-auto">
-          <img class="h-20" src="img/logo-grey.png" alt="Scan This Space">
-          <h1 class="mt-6 text-2xl font-bold text-gray-800 leading-tight sm:text-4xl lg:text-3xl sm:mt-8 xl:text-4xl">
-            You created your space,
-            <br class="hidden lg:inline"><span class="text-indigo-600"> Let it speak for itself.</span>
-          </h1>
-        </div>
+    <header class="text-gray-700 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font items-center text-gray-900 mb-4 md:mb-0">
+          <img src="img/logo.svg" class="w-21 h-20">
+        </a>
+        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+          <a class="mr-5 hover:text-gray-900">Services</a>
+          <a class="mr-5 hover:text-gray-900">Testimonials</a>
+          <a class="mr-5 hover:text-gray-900">FAQ</a>
+        </nav>
+        <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">Contact Us
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
       </div>
-    </div>
+    </header>
   </body>
 </html>
